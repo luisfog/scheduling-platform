@@ -1,4 +1,4 @@
-# scheduling-platform
+# Scheduling Platform
 This is a Scheduling Platform able to create calendar events for your clients schedules. This platform enables your clients to schedule hours (that you make available to them).
 
 The installation and configuration of this web platform is extremely easy to do, just follow the next steps.
