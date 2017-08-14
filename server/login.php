@@ -1,5 +1,5 @@
 <?php
-	
+	ini_set('display_errors', '0');
 	if(isset($_POST['username']) && isset($_POST['password'])){
 		
 		$username = $_POST['username'];
