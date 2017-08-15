@@ -1,5 +1,5 @@
 <?php
-	ini_set('display_errors', '0');
+	//ini_set('display_errors', '0');
 	session_start();
 	if(!isset($_SESSION['user'])){
 		header('Location: ../index.html' );

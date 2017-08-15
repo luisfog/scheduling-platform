@@ -21,8 +21,8 @@
 			return;
 		}
 		
-		
-		$sql = "UPDATE Clients SET valid=0, delete_date=NOW() WHERE user_name='$user_name'";
+		$milliseconds = round(microtime(true) * 1000);
+		$sql = "UPDATE Clients SET user_name='".$user_name."_".$milliseconds."', valid=0, delete_date=NOW() WHERE user_name LIKE '$user_name'";
 		
 		if ($conn->multi_query($sql) === TRUE) {
 			header("HTTP/1.1 200 OK");

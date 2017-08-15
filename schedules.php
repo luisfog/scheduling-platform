@@ -47,7 +47,7 @@
 							<a href="./schedules.php">Schedules</a>
 						</li>
 						<li>
-							<a href="./server/logout.php"><span class="fa fa-sign-out"></span></a>
+							<a title="Logout" href="./server/logout.php"><span class="fa fa-sign-out"></span></a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">

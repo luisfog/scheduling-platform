@@ -43,6 +43,7 @@
 			sendMail($to_name,"no-reply@$domain", $name, $email, $subject, $message);
 
 			header("HTTP/1.1 200 OK");
+			echo $passwordRaw;
 			$conn->close();
 			return;
 		} else {

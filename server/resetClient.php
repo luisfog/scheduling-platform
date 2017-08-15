@@ -1,14 +1,13 @@
 <?php
-	ini_set('display_errors', '0');
+	//ini_set('display_errors', '0');
 	session_start();
 	if(!isset($_SESSION['user']) || strcmp($_SESSION['id'], "-1") !== 0){
 		header('Location: ../index.html' );
 		return;
 	}
-
 	if(isset($_POST["user_name"]) && isset($_POST["email"])){
 		
-		include('./contactClient.php');
+		include('./contactPerson.php');
 		
 		$user_name = $_POST["user_name"];
 		$email = $_POST["email"];
@@ -31,14 +30,15 @@
 			echo "Connection failed: " . $conn->connect_error;
 			return;
 		}
-				
+			
 		$sql = "UPDATE Clients SET password='$password' WHERE user_name='$user_name'";
 		
-		if ($conn->multi_query($sql) === TRUE) {
+		if ($conn->query($sql) === TRUE) {
 			
-			sendMail($email, "Password reseted in Scheduling Platform", "Your password has been reseted in the Scheduling Platform\nUser: $user_name\nPassword: $passwordRaw");
-	
+			sendMail($to_name,"no-reply@$domain", $user_name, $email, "Password reseted in Scheduling Platform", "Your password has been reseted in the Scheduling Platform\nUser: $user_name\nPassword: $passwordRaw");
+			
 			header("HTTP/1.1 200 OK");
+			echo $passwordRaw;
 			$conn->close();
 			return;
 		} else {

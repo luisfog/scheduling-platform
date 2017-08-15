@@ -5,10 +5,8 @@ window.onload = function() {
 };
 		
 function getSchedules(){
-	var filterClient = document.getElementById("filterAvailable");
-	filterClient = filterClient.options[filterClient.selectedIndex].value;
-	var filterWhen = document.getElementById("filterWhen");
-	filterWhen = filterWhen.options[filterWhen.selectedIndex].value;
+	var filterClient = document.getElementById("filterAvailable").value;
+	var filterWhen = document.getElementById("filterWhen").value;
 	
 	$.ajax({
 		method: "POST",
@@ -310,10 +308,8 @@ function addHour(){
 	else
 		day_ui = document.getElementById("days").selectedIndex;
 	
-	var hour_ui = document.getElementById("hour");
-	hour_ui = hour_ui.options[hour_ui.selectedIndex].value;
-	var who_ui = document.getElementById("available");
-	who_ui = who_ui.options[who_ui.selectedIndex].value;
+	var hour_ui = document.getElementById("hour").value;
+	var who_ui = document.getElementById("available").value;
 	
 	$.ajax({
 		method: "POST",

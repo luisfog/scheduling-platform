@@ -19,10 +19,10 @@ function createClient(){
 	$.ajax({
 		method: "POST",
 		url: "./server/registerClient.php",
-		dataType: "json",
 		data: {name: name_ui, user_name: user_ui, email: email_ui, phone: phone_ui},
 		statusCode: {
 			200: function (response) {
+				alert("password: " + response);
 				getClients();
 			},
 			500: function (response) {
@@ -75,13 +75,13 @@ function resetPassword(username_ui, email_ui){
 	$.ajax({
 		method: "POST",
 		url: "./server/resetClient.php",
-		dataType: "json",
 		data: {user_name: username_ui, email: email_ui},
 		statusCode: {
 			200: function (response) {
 				document.getElementById("modalCloseTitle").innerHTML = "Reset Password";
 				document.getElementById("modalCloseText").innerHTML = "Password reseted. The client will receive an email with the new password."
 				document.getElementById("modalClose").style.display = "block";
+				alert("password: " + response);
 			},
 			500: function (response) {
 				document.getElementById("modalCloseTitle").innerHTML = "Reset Password";
