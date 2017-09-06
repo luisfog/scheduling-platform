@@ -33,9 +33,6 @@
 		
 		echo $sql;
 		if ($conn->multi_query($sql) === TRUE) {
-			
-			sendMail($email, "Registered in Scheduling Platform", "You have been registered in the Scheduling Platform\nUser: $user_name\nPassword: $passwordRaw");
-	
 			header("HTTP/1.1 200 OK");
 			$conn->close();
 			return;
